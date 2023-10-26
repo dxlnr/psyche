@@ -1,7 +1,7 @@
 # PSYCHE
 
 ```
-Translation -> Amino Acids -> Protein Folding
+Transcription (DNA to RNA) -> (RNA Processing) -> Translation (RNA to Protein) -> Protein Folding
 ```
 
 [Genome](https://www.ncbi.nlm.nih.gov/nuccore/1798174254) of Coronavirus
