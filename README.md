@@ -30,3 +30,4 @@ Proteinogenic amino acids are amino acids that are incorporated biosynthetically
 
 - [Genetic Code](https://en.wikipedia.org/wiki/Genetic_code)
 - [Translation: DNA to mRNA to Protein](https://www.nature.com/scitable/topicpage/translation-dna-to-mrna-to-protein-393/)
+- [Biopython](https://github.com/biopython/biopython/tree/master): Python tools for computational molecular biology.
