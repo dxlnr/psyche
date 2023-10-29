@@ -1,5 +1,6 @@
 """Bio Hacking"""
 import re
+from collections import OrderedDict
 
 genetic_code = {
     "gcu": "A",
@@ -101,61 +102,56 @@ def translation(rna: str) -> str:
     return "".join(list(filter(None, res.split("*"))))
 
 
-if __name__ == "__main__":
-    rna = transcription("data/corona.txt")
+def sars_cov2(fp: str) -> OrderedDict:
+    """SARS-CoV-2 genome organization.
+        https://www.ncbi.nlm.nih.gov/nuccore/NC_045512.2
 
-    # https://www.ncbi.nlm.nih.gov/nuccore/NC_045512.2
-    #
+    :param fp: File path.
+    :returns: OrderedDict of all genes coding for protein products.
+    """
+    sc = OrderedDict()
+    rna = transcription(fp)
+
     # gene="ORF1ab"
     # product="ORF1ab polyprotein"
     orf1a = rna[265:13468]
     orf1b = rna[13467:21555]
-    orf1ab = translation(orf1a + orf1b)
-
+    sc["orf1ab"] = translation(orf1a + orf1b)
     # gene="S"
     # gene_synonym="spike glycoprotein"
     # product="surface glycoprotein"
-    s = translation(rna[21562:25384])
-
+    sc["s"] = translation(rna[21562:25384])
     # gene="ORF3a"
     # product="ORF3a protein"
-    orf3a = translation(rna[25392:26220])
-
+    sc["orf3a"] = translation(rna[25392:26220])
     # gene="E"
     # product="envelope protein"
-    e = translation(rna[26244:26472])
-
+    sc["e"] = translation(rna[26244:26472])
     # gene="M"
     # product="membrane glycoprotein"
-    m = translation(rna[26522:27191])
-
+    sc["m"] = translation(rna[26522:27191])
     # gene="ORF6"
     # product="ORF6 protein"
-    orf6 = translation(rna[27201:27387])
-
+    sc["orf6"] = translation(rna[27201:27387])
     # gene="ORF7a"
     # product="ORF7a protein"
-    orf7a = translation(rna[27393:27759])
-
+    sc["orf7a"] = translation(rna[27393:27759])
     # gene="ORF8"
     # product="ORF8 protein"
-    orf8 = translation(rna[27893:28259])
-
+    sc["orf8"] = translation(rna[27893:28259])
     # gene="N"
     # product="nucleocapsid phosphoprotein"
-    n = translation(rna[28273:29533])
-
+    sc["n"] = translation(rna[28273:29533])
     # gene="ORF10"
     # product="ORF10 protein"
-    orf10 = translation(rna[29557:29674])
+    sc["orf10"] = translation(rna[29557:29674])
 
-    print(f"orf1ab\n{orf1ab}")
-    print(f"\ns\n{s}")
-    print(f"\norf3a\n{orf3a}")
-    print(f"\ne\n{e}")
-    print(f"\nm\n{m}")
-    print(f"\norf6\n{orf6}")
-    print(f"\norf7a\n{orf7a}")
-    print(f"\norf8\n{orf8}")
-    print(f"\nn\n{n}")
-    print(f"\norf10\n{orf10}")
+    return sc
+
+
+if __name__ == "__main__":
+    sc = sars_cov2("data/corona.txt")
+
+    print("SARS-CoV-2 genome organization")
+    for k, v in sc.items():
+        print(f"{k}:\n{v}\n")

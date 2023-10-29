@@ -5,6 +5,8 @@ The **central dogma of molecular biology** is an explanation of the flow of gene
 Transcription (DNA to RNA) -> (RNA Processing) -> Translation (RNA to Protein) -> Protein Folding
 ```
 
+The [genetic Code](https://en.wikipedia.org/wiki/Genetic_code) is the set of rules used by living cells to translate information encoded within genetic material (DNA or RNA sequences of nucleotide triplets, or codons) into proteins.
+
 The coding region of a gene, also known as the **coding sequence (CDS)**, is the portion of a gene's DNA or RNA that codes for protein.
 
 Proteinogenic amino acids are amino acids that are incorporated biosynthetically into proteins during translation. The word *proteinogenic* means *protein creating*.
@@ -24,10 +26,9 @@ Proteinogenic amino acids are amino acids that are incorporated biosynthetically
 
 ### Data 
 
-- [Genome](https://www.ncbi.nlm.nih.gov/nuccore/1798174254) of Coronavirus
+- [Genome](https://www.ncbi.nlm.nih.gov/nuccore/1798174254) of Coronavirus and additional information on [SARS-CoV-2](https://en.wikipedia.org/wiki/SARS-CoV-2#).
 
 ### Collected Information
 
-- [Genetic Code](https://en.wikipedia.org/wiki/Genetic_code)
 - [Translation: DNA to mRNA to Protein](https://www.nature.com/scitable/topicpage/translation-dna-to-mrna-to-protein-393/)
 - [Biopython](https://github.com/biopython/biopython/tree/master): Python tools for computational molecular biology.
